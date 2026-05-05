@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de cortinas y estores | Habitat & Decor</title>
+<meta name="description" content="Catálogo de cortinas, estores y visillos. Filtra por tipología y descubre nuestras colecciones exclusivas en el showroom de Jaca.">
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Tokens de marca -->
+<link rel="stylesheet" href="../02-tokens/tokens.css">
+
+<style>
+  body{padding-top:var(--nav-h)}
+
+  /* Header de catálogo */
+  .cat-head{padding:5rem 0 3rem;text-align:center;background:var(--c-bg-soft);border-bottom:1px solid var(--c-linen)}
+  .cat-head h1{margin-bottom:.8rem}
+  .cat-head__sub{max-width:560px;margin:0 auto}
+
+  /* Filtros */
+  .cat-filters{position:sticky;top:var(--nav-h);background:rgba(242,239,236,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--c-linen);z-index:100;padding:1rem 0}
+  .cat-filters__inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+  .cat-filters__chips{display:flex;gap:.4rem;flex-wrap:wrap}
+  .cat-chip{font-family:var(--f-body);font-size:.62rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.55rem 1rem;border:1px solid var(--c-linen);background:transparent;color:var(--c-ink);border-radius:var(--r);cursor:pointer;transition:all .25s var(--ease)}
+  .cat-chip:hover{border-color:var(--c-gold);color:var(--c-gold)}
+  .cat-chip[aria-pressed="true"]{background:var(--c-gold-dim);border-color:var(--c-gold);color:var(--c-gold)}
+  .cat-filters__count{font-size:.7rem;color:var(--c-ink-soft);letter-spacing:.05em}
+
+  /* Grid catálogo */
+  .cat-section{padding:4rem 0 6rem}
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem 1.4rem}
+  .cat-item{display:flex;flex-direction:column;gap:.8rem}
+  .cat-item__media{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--c-bg-soft)}
+  .cat-item__img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+  .cat-item:hover .cat-item__img{transform:scale(1.04)}
+  .cat-item__tag{position:absolute;top:.8rem;left:.8rem;background:rgba(255,255,255,.94);padding:.35rem .7rem;border-radius:var(--r);font-family:var(--f-body);font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-ink)}
+  .cat-item__zoom{position:absolute;bottom:.8rem;right:.8rem;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.94);color:var(--c-gold);display:flex;align-items:center;justify-content:center;font-size:.85rem;opacity:0;transform:translateY(6px);transition:all .25s var(--ease)}
+  .cat-item:hover .cat-item__zoom{opacity:1;transform:translateY(0)}
+  .cat-item__title{font-family:var(--f-display);font-size:1.4rem;color:var(--c-ink);line-height:1.2}
+  .cat-item__meta{display:flex;gap:.4rem;flex-wrap:wrap}
+  .cat-item__meta span{font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--c-ink-soft);background:var(--c-bg-soft);padding:.25rem .55rem;border-radius:var(--r)}
+  .cat-item__desc{font-size:.82rem;color:var(--c-ink-soft);line-height:1.55}
+  .cat-item__cta{align-self:flex-start;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-gold);padding-top:.4rem;border-top:1px solid var(--c-linen);width:100%;display:inline-flex;align-items:center;gap:.4rem}
+  .cat-item__cta i{transition:transform .25s var(--ease)}
+  .cat-item:hover .cat-item__cta i{transform:translateX(4px)}
+
+  /* CTA final */
+  .cat-cta{padding:6rem 0;background:var(--c-bg-soft);text-align:center}
+  .cat-cta h2{margin-bottom:1rem}
+  .cat-cta__lede{max-width:560px;margin:0 auto 2rem}
+  .cat-cta__buttons{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
+  @media (max-width:900px){
+    .cat-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:600px){
+    .cat-grid{grid-template-columns:1fr}
+    .cat-filters{position:relative;top:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(242,239,236,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--c-linen);height:var(--nav-h)">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;height:100%">
+    <a href="../" style="display:flex;align-items:center;gap:.6rem">
+      <img src="../03-assets/photography/logo-habitat-decor2.png" alt="Habitat & Decor" width="38" height="38">
+      <span style="font-family:var(--f-display);font-size:1.55rem;font-weight:600;color:var(--c-gold)">Habitat &amp; Decor</span>
+    </a>
+    <nav style="display:flex;gap:1.5rem;align-items:center">
+      <a href="#" style="font-size:.63rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--c-ink)">Cortinas</a>
+      <a href="#" style="font-size:.63rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--c-ink)">Tapicería</a>
+      <a href="#" style="font-size:.63rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--c-ink)">Papel pintado</a>
+      <a href="#cta" class="btn-agendar" style="font-size:.63rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--c-white);background:var(--c-gold);border:1px solid var(--c-gold);border-radius:var(--r);padding:.58rem 1.1rem">Agendar cita</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HEAD CATÁLOGO -->
+<section class="cat-head">
+  <div class="wrap">
+    <span class="eyebrow">Catálogo · Cortinas y estores</span>
+    <div class="rule center"></div>
+    <h1 class="t-section">Cada estancia, su tejido.</h1>
+    <p class="body-p cat-head__sub">
+      Una selección de tipologías y acabados que confeccionamos en nuestro
+      taller de Jaca. Filtra por tipología o ven al showroom a verlas en
+      muestrario físico.
+    </p>
+  </div>
+</section>
+
+<!-- FILTROS -->
+<div class="cat-filters">
+  <div class="wrap cat-filters__inner">
+    <div class="cat-filters__chips" role="tablist">
+      <button class="cat-chip" aria-pressed="true">Todo</button>
+      <button class="cat-chip" aria-pressed="false">Lino</button>
+      <button class="cat-chip" aria-pressed="false">Visillo</button>
+      <button class="cat-chip" aria-pressed="false">Estor enrollable</button>
+      <button class="cat-chip" aria-pressed="false">Estor paquetto</button>
+      <button class="cat-chip" aria-pressed="false">Panel japonés</button>
+      <button class="cat-chip" aria-pressed="false">Opaco</button>
+      <button class="cat-chip" aria-pressed="false">Motorizado</button>
+    </div>
+    <span class="cat-filters__count">12 modelos en showroom</span>
+  </div>
+</div>
+
+<!-- GRID -->
+<section class="cat-section">
+  <div class="wrap">
+    <div class="cat-grid">
+
+      <article class="cat-item">
+        <div class="cat-item__media">
+          <img src="../03-assets/photography/cortinas/cortina_lino.jpg" class="cat-item__img" alt="Cortina de lino natural con caída completa">
+          <span class="cat-item__tag">Lino</span>
+          <span class="cat-item__zoom"><i class="fas fa-search-plus"></i></span>
+        </div>
+        <h3 class="cat-item__title">Lino natural</h3>
+        <div class="cat-item__meta"><span>Caída</span><span>Salón</span></div>
+        <p class="cat-item__desc">Tejido de lino 100% natural, caída fluida y textura mate. Ideal para salones del Pirineo con luz natural abundante.</p>
+        <a href="#" class="cat-item__cta">Ver detalle <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="cat-item">
+        <div class="cat-item__media">
+          <img src="../03-assets/photography/cortinas/cortina_dormitorio_oscurante.jpg" class="cat-item__img" alt="Cortina opaca para dormitorio">
+          <span class="cat-item__tag">Opaco</span>
+          <span class="cat-item__zoom"><i class="fas fa-search-plus"></i></span>
+        </div>
+        <h3 class="cat-item__title">Opaco blackout</h3>
+        <div class="cat-item__meta"><span>Dormitorio</span><span>Aislante</span></div>
+        <p class="cat-item__desc">Tejido blackout que bloquea la luz al 100%. Forrado en lino o algodón visto por el lado interior. Indispensable en dormitorios principales.</p>
+        <a href="#" class="cat-item__cta">Ver detalle <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="cat-item">
+        <div class="cat-item__media">
+          <img src="../03-assets/photography/cortinas/cortina_visillo_riel.jpg" class="cat-item__img" alt="Visillo blanco con riel oculto">
+          <span class="cat-item__tag">Visillo</span>
+          <span class="cat-item__zoom"><i class="fas fa-search-plus"></i></span>
+        </div>
+        <h3 class="cat-item__title">Visillo difusor</h3>
+        <div class="cat-item__meta"><span>Tamiza luz</span><span>Doble cortina</span></div>
+        <p class="cat-item__desc">Visillo en gasa o lino fino para tamizar la luz sin oscurecer. Se combina con cortina opaca o decorativa en doble riel.</p>
+        <a href="#" class="cat-item__cta">Ver detalle <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="cat-item">
+        <div class="cat-item__media">
+          <img src="../03-assets/photography/cortinas/cortina_estor_paquetto.jpg" class="cat-item__img" alt="Estor paquetto plegado en ventana">
+          <span class="cat-item__tag">Paquetto</span>
+          <span class="cat-item__zoom"><i class="fas fa-search-plus"></i></span>
+        </div>
+        <h3 class="cat-item__title">Estor paquetto</h3>
+        <div class="cat-item__meta"><span>Plegado</span><span>Decorativo</span></div>
+        <p class="cat-item__desc">Estor de pliegues blandos sin varillas. Caída suave que envuelve la ventana. Funciona muy bien en cocinas y baños amplios.</p>
+        <a href="#" class="cat-item__cta">Ver detalle <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="cat-item">
+        <div class="cat-item__media">
+          <img src="../03-assets/photography/cortinas/cortina_estor_cocina.jpg" class="cat-item__img" alt="Estor enrollable en cocina">
+          <span class="cat-item__tag">Enrollable</span>
+          <span class="cat-item__zoom"><i class="fas fa-search-plus"></i></span>
+        </div>
+        <h3 class="cat-item__title">Estor enrollable</h3>
+        <div class="cat-item__meta"><span>Cocina</span><span>Lavable</span></div>
+        <p class="cat-item__desc">Estor técnico de tejido screen, antimanchas, ideal para cocinas. Disponible con cofre superior y guías laterales.</p>
+        <a href="#" class="cat-item__cta">Ver detalle <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="cat-item">
+        <div class="cat-item__media">
+          <img src="../03-assets/photography/cortinas/cortina_estor_bar.jpg" class="cat-item__img" alt="Estor en local de hostelería">
+          <span class="cat-item__tag">Contrato</span>
+          <span class="cat-item__zoom"><i class="fas fa-search-plus"></i></span>
+        </div>
+        <h3 class="cat-item__title">Estor de contrato</h3>
+        <div class="cat-item__meta"><span>Hostelería</span><span>M1</span></div>
+        <p class="cat-item__desc">Tejido ignífugo M1 con certificación contract. Para hoteles, restaurantes y casas rurales. Alta resistencia al uso.</p>
+        <a href="#" class="cat-item__cta">Ver detalle <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="cat-item">
+        <div class="cat-item__media">
+          <img src="../03-assets/photography/cortinas/cortina_salon_biescas.jpg" class="cat-item__img" alt="Cortinas de salón en proyecto Biescas">
+          <span class="cat-item__tag">Doble cortina</span>
+          <span class="cat-item__zoom"><i class="fas fa-search-plus"></i></span>
+        </div>
+        <h3 class="cat-item__title">Salón doble cortina</h3>
+        <div class="cat-item__meta"><span>Visillo + opaco</span><span>Salón</span></div>
+        <p class="cat-item__desc">Combinación clásica para grandes ventanales: visillo interior y cortina decorativa exterior. Control de luz total.</p>
+        <a href="#" class="cat-item__cta">Ver detalle <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="cat-item">
+        <div class="cat-item__media">
+          <img src="../03-assets/photography/cortinas/cortina_semiplana_Jaca.jpg" class="cat-item__img" alt="Cortina semiplana en proyecto Jaca">
+          <span class="cat-item__tag">Onda perfecta</span>
+          <span class="cat-item__zoom"><i class="fas fa-search-plus"></i></span>
+        </div>
+        <h3 class="cat-item__title">Onda perfecta</h3>
+        <div class="cat-item__meta"><span>Confección técnica</span><span>Wave</span></div>
+        <p class="cat-item__desc">Sistema wave con ondas regulares y caída idéntica de arriba abajo. La confección que mejor define el textil contemporáneo.</p>
+        <a href="#" class="cat-item__cta">Ver detalle <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="cat-item">
+        <div class="cat-item__media">
+          <img src="../03-assets/photography/cortinas/cortina_dormitorio_blanco.jpg" class="cat-item__img" alt="Cortina blanca en dormitorio luminoso">
+          <span class="cat-item__tag">Lino claro</span>
+          <span class="cat-item__zoom"><i class="fas fa-search-plus"></i></span>
+        </div>
+        <h3 class="cat-item__title">Dormitorio claro</h3>
+        <div class="cat-item__meta"><span>Lino</span><span>Visillo</span></div>
+        <p class="cat-item__desc">Cortina ligera de lino claro para dormitorios que no requieren oscurecimiento total. Caída relajada, mantenimiento sencillo.</p>
+        <a href="#" class="cat-item__cta">Ver detalle <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cat-cta" id="cta">
+  <div class="wrap">
+    <span class="eyebrow">Ven al showroom</span>
+    <div class="rule center"></div>
+    <h2 class="t-section">+2.000 muestras<br>te esperan en Jaca.</h2>
+    <p class="body-p cat-cta__lede">
+      El catálogo digital es solo una muestra. En el showroom puedes tocar
+      los tejidos, ver la caída a tamaño real y comparar bajo distintas
+      luces. También llevamos los muestrarios a tu domicilio sin compromiso.
+    </p>
+    <div class="cat-cta__buttons">
+      <a href="../" class="btn btn-gold">Pedir visita gratuita</a>
+      <a href="tel:+34974288787" class="btn btn-outline">
+        <i class="fas fa-phone"></i> 974 288 787
+      </a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

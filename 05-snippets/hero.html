@@ -1,0 +1,60 @@
+<!-- ════════════════════════════════════════════════════════════════
+     SNIPPET — Hero
+     Habitat & Decor Style Library
+     Foto real + zoom hover sutil + tag de procedencia
+     ════════════════════════════════════════════════════════════════ -->
+
+<section class="hd-hero">
+  <div class="wrap hd-hero__inner">
+
+    <div class="hd-hero__copy">
+      <span class="eyebrow hd-hero__eyebrow">Jaca · Pirineo Aragonés</span>
+      <div class="rule"></div>
+      <h1 class="t-hero hd-hero__title">
+        Textil <span class="accent">a medida</span><br>
+        para tu espacio.
+      </h1>
+      <p class="body-p hd-hero__lede">
+        Diseñamos, fabricamos e instalamos proyectos de cortinas,
+        tapicería, papel pintado y muebles a medida desde nuestro
+        taller en Jaca.
+      </p>
+      <div class="hd-hero__cta">
+        <a href="#proyectos" class="btn btn-gold">Ver proyectos</a>
+        <a href="#contacto" class="btn btn-outline">Contactar</a>
+      </div>
+    </div>
+
+    <div class="hd-hero__media">
+      <img src="03-assets/photography/hero-curtain.jpg"
+           alt="Cortinas de lino a medida instaladas por Habitat & Decor en Jaca"
+           class="hd-hero__img">
+      <div class="hd-hero__tag">
+        <span class="hd-hero__dot"></span>
+        Proyecto real · Jaca
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .hd-hero{padding:7rem 0 6rem;padding-top:calc(var(--nav-h) + 5rem)}
+  .hd-hero__inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .hd-hero__eyebrow{font-size:.68rem;letter-spacing:.22em;animation:fadeUp .8s var(--ease-out) .1s both}
+  .hd-hero .rule{animation:fadeUp .8s var(--ease-out) .18s both}
+  .hd-hero__title{margin-bottom:1.4rem;animation:fadeUp .8s var(--ease-out) .28s both}
+  .hd-hero__lede{max-width:480px;margin-bottom:2rem;animation:fadeUp .8s var(--ease-out) .4s both}
+  .hd-hero__cta{display:flex;gap:.8rem;flex-wrap:wrap;animation:fadeUp .8s var(--ease-out) .55s both}
+  .hd-hero__media{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-md);aspect-ratio:4/5}
+  .hd-hero__img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+  .hd-hero__media:hover .hd-hero__img{transform:scale(1.04)}
+  .hd-hero__tag{position:absolute;bottom:1.2rem;left:1.2rem;background:rgba(255,255,255,.94);padding:.5rem .9rem;border-radius:var(--r);display:inline-flex;align-items:center;gap:.5rem;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-ink)}
+  .hd-hero__dot{width:6px;height:6px;border-radius:50%;background:var(--c-gold)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  @media (max-width:768px){
+    .hd-hero{padding:5rem 0 4rem;padding-top:calc(var(--nav-h) + 3rem)}
+    .hd-hero__inner{grid-template-columns:1fr;gap:2.5rem}
+    .hd-hero__media{aspect-ratio:1/1;order:-1}
+  }
+</style>

@@ -1,0 +1,172 @@
+{
+  "$schema": "./manifest.schema.json",
+  "meta": {
+    "brand": "Habitat & Decor",
+    "source-domain": "habitatdecor.es",
+    "base-url": "https://habitatdecor.es/images/",
+    "updated": "2026-05-05",
+    "total-images": 67,
+    "note": "Para descargar todas las imágenes ejecutar bash ../download-images.sh"
+  },
+
+  "logo": [
+    {
+      "file": "logo-habitat-decor2.png",
+      "url": "https://habitatdecor.es/images/logo-habitat-decor2.png",
+      "category": "logo",
+      "alt": "Habitat & Decor logo",
+      "use": "Logo principal con icono — usado en navbar, footer y email signature",
+      "dimensions": "38x38 (display) / archivo origen mayor"
+    }
+  ],
+
+  "favicon": [
+    { "file": "favicon/favicon-16x16.png",   "use": "Favicon estándar 16px" },
+    { "file": "favicon/favicon-32x32.png",   "use": "Favicon estándar 32px" },
+    { "file": "favicon/apple-touch-icon.png","use": "Apple touch icon 180px" },
+    { "file": "favicon/site.webmanifest",    "use": "Web app manifest" }
+  ],
+
+  "social": [
+    { "file": "og-image.jpg",       "use": "Open Graph image 1200×630 — Facebook, LinkedIn, WhatsApp share" },
+    { "file": "twitter-card.jpg",   "use": "Twitter Card summary_large_image" }
+  ],
+
+  "hero": [
+    {
+      "file": "hero-curtain.jpg",
+      "category": "hero",
+      "alt": "Cortinas de lino a medida instaladas por Habitat & Decor en Jaca",
+      "use": "Hero principal homepage — proyecto real con efecto zoom hover",
+      "tag": "Proyecto real · Jaca"
+    }
+  ],
+
+  "proyectos-destacados": [
+    {
+      "file": "proyecto_Biescas.jpeg",
+      "alt": "Salón con cortinas de gasa blanca y visillos terracota en Biescas.",
+      "subtitle": "Proyecto particular",
+      "title": "Biescas",
+      "use": "Card de proyecto — galería homepage"
+    },
+    {
+      "file": "Sofa_cama_sistema_italiano.jpg",
+      "alt": "Sofá cama sistema italiano en salón con papel pintado tipográfico, Jaca.",
+      "subtitle": "Compra e instalación",
+      "title": "Sofá · Jaca"
+    },
+    {
+      "file": "silla_butaquilla.jpg",
+      "alt": "Silla butaquilla tapizada en verde con cojín estampado paisley rojo, showroom Jaca.",
+      "subtitle": "Venta en showroom",
+      "title": "Silla escritorio · Jaca"
+    },
+    {
+      "file": "cortinas_aulas.jpeg",
+      "alt": "Instalación de cortinas opacas en aula de centro educativo, Jaca.",
+      "subtitle": "Proyecto institucional",
+      "title": "Centro educativo · Jaca"
+    },
+    {
+      "file": "sillas_retapizadas.jpg",
+      "alt": "Sillas apilables de oficina en el showroom de Habitat & Decor, Jaca.",
+      "subtitle": "Renovación de mobiliario",
+      "title": "Despacho · Jaca"
+    },
+    {
+      "file": "cortina_dormitorio.jpg",
+      "alt": "Cortinas de lino gris con visillo blanco en dormitorio de chalet, Valle de Tena.",
+      "subtitle": "Cortinas · visillos · estores",
+      "title": "Chalet · Valle de Tena"
+    },
+    {
+      "file": "camping_valle_aragon.jpg",
+      "alt": "Bungalow en Camping Valle de Aragón: dormitorio con cabecero tapizado y sala de estar retapizada.",
+      "subtitle": "Proyecto de negocio · tapicería completa",
+      "title": "Camping · Valle de Aragón"
+    }
+  ],
+
+  "cortinas": [
+    { "file": "cortinas/cortina_dormitorio_blanco.jpg",    "alt": "Cortina blanca en dormitorio" },
+    { "file": "cortinas/cortina_dormitorio_oscurante.jpg", "alt": "Cortina oscurante en dormitorio" },
+    { "file": "cortinas/cortina_estor_bar.jpg",            "alt": "Estor en bar" },
+    { "file": "cortinas/cortina_estor_cocina.jpg",         "alt": "Estor en cocina" },
+    { "file": "cortinas/cortina_estor_paquetto.jpg",       "alt": "Estor paquetto plegado" },
+    { "file": "cortinas/cortina_lino.jpg",                 "alt": "Cortina de lino" },
+    { "file": "cortinas/cortina_salon_biescas.jpg",        "alt": "Cortina de salón en Biescas" },
+    { "file": "cortinas/cortina_salon_esquina.jpg",        "alt": "Cortina de salón en esquina" },
+    { "file": "cortinas/cortina_semiplana_Jaca.jpg",       "alt": "Cortina semiplana en Jaca" },
+    { "file": "cortinas/cortina_visillo_riel.jpg",         "alt": "Visillo con riel" },
+    { "file": "cortinas_lino.jpg",                         "alt": "Cortinas de lino general" },
+    { "file": "H_D_cortinas.webp",                         "alt": "Cortinas Habitat & Decor — atmósfera" }
+  ],
+
+  "tapiceria": [
+    { "file": "tapiceria/Sofa_cama_sistema_italiano.jpg",         "alt": "Sofá cama sistema italiano" },
+    { "file": "tapiceria/butaca_tapizada.jpg",                    "alt": "Butaca tapizada" },
+    { "file": "tapiceria/cabecero_cama.jpg",                      "alt": "Cabecero de cama tapizado" },
+    { "file": "tapiceria/cabecero_cama_acabado.jpeg",             "alt": "Cabecero de cama acabado" },
+    { "file": "tapiceria/cabecero_cama_ajustada_instalacion.jpg", "alt": "Instalación de cabecero ajustado" },
+    { "file": "tapiceria/resstaurado_estructura_asiento.jpeg",    "alt": "Restauración de estructura de asiento" },
+    { "file": "tapiceria/sofacama_pared_papel_pintado.jpg",       "alt": "Sofá cama con pared de papel pintado" },
+    { "file": "tapiceria/tapiceria_bancos_a_medida_hotel.jpg",    "alt": "Bancos tapizados a medida para hotel" },
+    { "file": "tapiceria/tapizado_baul.jpg",                      "alt": "Baúl tapizado" },
+    { "file": "tapiceria/tapizado_butaca_orejera.jpg",            "alt": "Butaca orejera tapizada" },
+    { "file": "tapiceria/tapizado_butaca_reclinable.jpg",         "alt": "Butaca reclinable tapizada" },
+    { "file": "tapiceria/tapizado_espumas.jpeg",                  "alt": "Espumas para tapizado" },
+    { "file": "tapiceria/tapizado_paredes.jpeg",                  "alt": "Pared tapizada" },
+    { "file": "tapiceria/tapizado_puff.jpg",                      "alt": "Puff tapizado" },
+    { "file": "tapiceria/tapizado_sofa.jpg",                      "alt": "Sofá retapizado" },
+    { "file": "tapiceria/tapizado_sofa_2.jpg",                    "alt": "Sofá retapizado, segunda vista" },
+    { "file": "tapiceria/tapizando_banco.jpg",                    "alt": "Tapizando un banco en el taller" },
+    { "file": "tapiceria/tapizando_estructura_banco.jpg",         "alt": "Tapizando estructura de banco" },
+    { "file": "cabecero_cama_acabado.jpg",                        "alt": "Cabecero de cama acabado (root)" },
+    { "file": "tapizado_banco_cadiera.jpg",                       "alt": "Banco cadiera tapizado" },
+    { "file": "Mostrario_tapiceria.jpg",                          "alt": "Muestrario de telas de tapicería" }
+  ],
+
+  "papel-pintado": [
+    { "file": "papel-pintado/alfombra.jpg",                    "alt": "Alfombra a medida" },
+    { "file": "papel-pintado/alfombras_a_medida.jpg",          "alt": "Alfombras a medida en showroom" },
+    { "file": "papel-pintado/mostarario_alfombras.jpg",        "alt": "Muestrario de alfombras" },
+    { "file": "papel-pintado/papel_pintado1.jpg",              "alt": "Papel pintado instalado, vista 1" },
+    { "file": "papel-pintado/papel_pintado2.jpg",              "alt": "Papel pintado instalado, vista 2" },
+    { "file": "papel-pintado/papel_pintado_mostrario-4.jpg",   "alt": "Muestrario de papel pintado" },
+    { "file": "papel-pintado/papel_pintado_texturas-3.jpg",    "alt": "Texturas de papel pintado" }
+  ],
+
+  "muebles": [
+    { "file": "muebles/Cama_nido.jpg",     "alt": "Cama nido a medida" },
+    { "file": "muebles/butacas.jpg",       "alt": "Butacas en showroom" },
+    { "file": "muebles/motorizados.jpg",   "alt": "Sofás motorizados" },
+    { "file": "muebles/muebles_hero.jpg",  "alt": "Hero de muebles auxiliares" },
+    { "file": "muebles/salon.jpg",         "alt": "Salón con muebles a medida" }
+  ],
+
+  "showroom": [
+    { "file": "showroom_auxiliar.jpg",       "alt": "Showroom — área de mobiliario auxiliar" },
+    { "file": "showroom_cortinas.jpg",       "alt": "Showroom — área de cortinas" },
+    { "file": "showroom_cortinas_1.jpg",     "alt": "Showroom — cortinas, vista 2" },
+    { "file": "showroom_papel_pintado.jpeg", "alt": "Showroom — papel pintado" },
+    { "file": "showroom_tejidos.jpg",        "alt": "Showroom — área de tejidos" },
+    { "file": "mostrarios.jpg",              "alt": "Muestrarios en showroom" }
+  ],
+
+  "taller": [
+    { "file": "taller1.webp",         "alt": "Taller de confección Habitat & Decor en Jaca" },
+    { "file": "transporte.jpg",       "alt": "Furgoneta de transporte e instalación" },
+    { "file": "H_D_image3.jpg",       "alt": "Atmósfera Habitat & Decor — imagen 3" },
+    { "file": "H_D_image4.jpg",       "alt": "Atmósfera Habitat & Decor — imagen 4" },
+    { "file": "H_D_image6.jpg",       "alt": "Atmósfera Habitat & Decor — imagen 6" },
+    { "file": "H_D_image8.webp",      "alt": "Atmósfera Habitat & Decor — imagen 8" }
+  ],
+
+  "negocios": [
+    { "file": "H_D_negocios1.jpg",         "alt": "Proyecto de negocio Habitat & Decor" },
+    { "file": "negocio_casa_rural.jpg",    "alt": "Proyecto en casa rural" },
+    { "file": "interior-mountain-view.jpg","alt": "Interior con vista a montaña" },
+    { "file": "salon_vestido.jpg",         "alt": "Salón vestido — proyecto integral" }
+  ]
+}

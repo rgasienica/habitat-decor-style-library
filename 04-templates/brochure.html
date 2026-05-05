@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brochure corporativo | Habitat & Decor</title>
+<meta name="description" content="Habitat & Decor — Estudio-taller textil en Jaca. 18 años diseñando, fabricando e instalando proyectos textiles integrales en el Pirineo aragonés.">
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Tokens -->
+<link rel="stylesheet" href="../02-tokens/tokens.css">
+
+<style>
+  /* Brochure se diseña como secuencia narrativa de pliegues */
+  body{padding:0}
+
+  /* Cover */
+  .br-cover{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;color:var(--c-white);text-align:center;padding:4rem 1.5rem}
+  .br-cover__bg{position:absolute;inset:0;background:url('../03-assets/photography/hero-curtain.jpg') center/cover no-repeat;z-index:0}
+  .br-cover__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(60,60,60,.3) 0%,rgba(60,60,60,.55) 100%)}
+  .br-cover__inner{position:relative;z-index:1;max-width:780px}
+  .br-cover__logo{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:2.5rem;font-family:var(--f-display);font-size:1.8rem;font-weight:600;color:var(--c-white)}
+  .br-cover__logo img{filter:brightness(0) invert(1)}
+  .br-cover__eyebrow{font-family:var(--f-body);font-size:.7rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--c-sand);margin-bottom:1.4rem;display:block}
+  .br-cover__divider{width:60px;height:1px;background:var(--c-sand);margin:0 auto 1.6rem}
+  .br-cover__title{font-family:var(--f-display);font-size:clamp(3.2rem,7vw,6.5rem);line-height:1.05;font-weight:400;color:var(--c-white);margin-bottom:1.2rem}
+  .br-cover__title em{color:var(--c-sand);font-style:normal}
+  .br-cover__lede{font-size:1.05rem;line-height:1.6;color:var(--c-white);max-width:560px;margin:0 auto 2.5rem;opacity:.9}
+  .br-cover__meta{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c-sand);font-weight:600}
+  .br-cover__meta span{display:flex;align-items:center;gap:.5rem}
+
+  /* Sección genérica */
+  .br-section{padding:7rem 0}
+  .br-section--soft{background:var(--c-bg-soft)}
+  .br-section--ink{background:var(--c-ink);color:var(--c-white)}
+  .br-section--ink .body-p{color:rgba(255,255,255,.85)}
+  .br-section--ink .t-section,
+  .br-section--ink .t-card{color:var(--c-white)}
+  .br-section--ink .eyebrow{color:var(--c-sand)}
+
+  /* Sección 1: manifiesto */
+  .br-mani{text-align:center}
+  .br-mani__inner{max-width:780px;margin:0 auto}
+  .br-mani__quote{font-family:var(--f-display);font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.25;color:var(--c-ink);margin-bottom:2rem}
+  .br-mani__quote em{color:var(--c-gold);font-style:normal}
+  .br-mani__cite{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink-soft)}
+
+  /* Sección 2: Taller */
+  .br-taller{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+  .br-taller__media{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden}
+  .br-taller__media img{width:100%;height:100%;object-fit:cover}
+  .br-taller__media .br-tag{position:absolute;bottom:1.2rem;left:1.2rem;background:rgba(255,255,255,.94);padding:.5rem .9rem;border-radius:var(--r);font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+
+  /* Sección 3: cifras */
+  .br-figures__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+  .br-figures__cell{text-align:center;padding:1.5rem}
+  .br-figures__num{font-family:var(--f-display);font-size:4rem;font-weight:600;color:var(--c-gold);line-height:1;margin-bottom:.5rem}
+  .br-figures__cell p{font-size:.85rem;color:var(--c-ink-soft);line-height:1.5}
+
+  /* Sección 4: servicios narrativa */
+  .br-services__head{text-align:center;margin-bottom:4rem;max-width:680px;margin-left:auto;margin-right:auto}
+  .br-services__list{display:flex;flex-direction:column;gap:5rem}
+  .br-svc-row{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .br-svc-row:nth-child(even){direction:rtl}
+  .br-svc-row:nth-child(even) > *{direction:ltr}
+  .br-svc-row__media{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden}
+  .br-svc-row__media img{width:100%;height:100%;object-fit:cover}
+  .br-svc-row__num{font-family:var(--f-display);font-size:4.5rem;font-weight:600;color:var(--c-gold);line-height:1;margin-bottom:.5rem}
+  .br-svc-row__list{margin-top:1.5rem}
+  .br-svc-row__list li{display:flex;gap:.6rem;align-items:flex-start;font-size:.88rem;color:var(--c-ink);margin-bottom:.6rem}
+  .br-svc-row__list i{color:var(--c-gold);margin-top:.3rem;flex-shrink:0}
+
+  /* Sección 5: proceso */
+  .br-process__head{text-align:center;margin-bottom:4rem}
+  .br-process__steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
+  .br-process__step{text-align:center;padding:2rem 1rem;background:var(--c-white);border:1px solid var(--c-linen);border-radius:var(--r);transition:transform .3s var(--ease)}
+  .br-process__step:hover{transform:translateY(-3px)}
+  .br-process__num{font-family:var(--f-display);font-size:3rem;font-weight:600;color:var(--c-gold);line-height:1;margin-bottom:.6rem}
+  .br-process__icon{width:48px;height:48px;border-radius:50%;border:1px solid var(--c-sand);display:inline-flex;align-items:center;justify-content:center;color:var(--c-gold);margin-bottom:1rem}
+  .br-process__step h4{font-family:var(--f-display);font-size:1.4rem;margin-bottom:.6rem}
+  .br-process__step p{font-size:.78rem;color:var(--c-ink-soft);line-height:1.55}
+
+  /* Sección 6: Proyectos */
+  .br-projects__head{text-align:center;margin-bottom:4rem}
+  .br-projects__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .br-project{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden}
+  .br-project img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+  .br-project:hover img{transform:scale(1.04)}
+  .br-project__caption{position:absolute;left:1.2rem;right:1.2rem;bottom:1.2rem;color:var(--c-white)}
+  .br-project__caption::before{content:'';position:absolute;inset:-1.2rem;background:linear-gradient(180deg,transparent 0%,rgba(60,60,60,.7) 100%);z-index:-1}
+  .br-project::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(60,60,60,.7) 100%);pointer-events:none}
+  .br-project__sub{font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--c-sand);display:block;margin-bottom:.3rem;position:relative;z-index:1}
+  .br-project__title{font-family:var(--f-display);font-size:1.4rem;color:var(--c-white);position:relative;z-index:1}
+
+  /* Sección 7: testimonio */
+  .br-quote{text-align:center;max-width:780px;margin:0 auto}
+  .br-quote__text{font-family:var(--f-display);font-size:clamp(2rem,3.5vw,2.8rem);line-height:1.3;color:var(--c-ink);margin-bottom:1.4rem;position:relative}
+  .br-quote__text::before{content:'"';position:absolute;left:50%;top:-3rem;transform:translateX(-50%);font-size:6rem;color:var(--c-gold);opacity:.3;line-height:1}
+  .br-quote__cite{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink-soft)}
+
+  /* Sección final: contacto */
+  .br-contact{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+  .br-contact__info{background:var(--c-white);padding:3rem;border-radius:var(--r);border:1px solid rgba(255,255,255,.15)}
+  .br-contact__info ul{display:flex;flex-direction:column;gap:1rem}
+  .br-contact__info li{display:flex;gap:.8rem;align-items:flex-start;color:var(--c-ink);font-size:.92rem}
+  .br-contact__info li i{color:var(--c-gold);width:18px;margin-top:.25rem;flex-shrink:0}
+  .br-contact__info strong{display:block;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink-soft);margin-bottom:.2rem}
+
+  /* Footer mínimo */
+  .br-footer{padding:2rem 0;text-align:center;background:var(--c-bg);font-size:.7rem;color:var(--c-ink-soft);letter-spacing:.05em}
+
+  @media (max-width:900px){
+    .br-section{padding:5rem 0}
+    .br-taller,
+    .br-svc-row,
+    .br-contact{grid-template-columns:1fr;gap:2.5rem}
+    .br-svc-row:nth-child(even){direction:ltr}
+    .br-figures__grid{grid-template-columns:repeat(2,1fr)}
+    .br-process__steps{grid-template-columns:repeat(2,1fr)}
+    .br-projects__grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="br-cover">
+  <div class="br-cover__bg" aria-hidden="true"></div>
+  <div class="br-cover__inner">
+    <div class="br-cover__logo">
+      <img src="../03-assets/photography/logo-habitat-decor2.png" alt="" width="44" height="44">
+      <span>Habitat &amp; Decor</span>
+    </div>
+    <span class="br-cover__eyebrow">Brochure corporativo · 2026</span>
+    <div class="br-cover__divider"></div>
+    <h1 class="br-cover__title">Textil <em>a medida</em><br>desde el Pirineo.</h1>
+    <p class="br-cover__lede">
+      Estudio-taller textil con showroom propio en Jaca.
+      Diseñamos, fabricamos e instalamos proyectos textiles integrales
+      para profesionales, viviendas y negocios del Pirineo aragonés.
+    </p>
+    <div class="br-cover__meta">
+      <span><i class="fas fa-map-marker-alt"></i> Jaca · Aragón</span>
+      <span><i class="fas fa-phone"></i> +34 974 288 787</span>
+      <span><i class="fas fa-globe"></i> habitatdecor.es</span>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFIESTO -->
+<section class="br-section br-mani">
+  <div class="wrap">
+    <div class="br-mani__inner">
+      <span class="eyebrow">Quiénes somos</span>
+      <div class="rule center"></div>
+      <p class="br-mani__quote">
+        Cada cortina, cada sofá, cada papel pintado de los proyectos que firmamos
+        sale de <em>nuestro propio taller</em>. Sin intermediarios.
+      </p>
+      <p class="br-mani__cite">— El equipo de Habitat & Decor</p>
+    </div>
+  </div>
+</section>
+
+<!-- TALLER -->
+<section class="br-section br-section--soft">
+  <div class="wrap">
+    <div class="br-taller">
+      <div class="br-taller__media">
+        <img src="../03-assets/photography/taller1.webp" alt="Taller de confección Habitat & Decor en Jaca">
+        <span class="br-tag">Taller · Jaca</span>
+      </div>
+      <div>
+        <span class="eyebrow">Taller propio</span>
+        <div class="rule"></div>
+        <h2 class="t-section">Donde se decide<br>cada acabado.</h2>
+        <p class="body-p">
+          Trabajamos con telas de marcas exclusivas que no encontrarás en
+          cualquier canal. Cortamos, cosemos y rematamos en Jaca, controlando
+          cada fase del proceso. Esto nos permite ajustar plazos sin perder
+          calidad y resolver imprevistos sin pasar por terceros.
+        </p>
+        <p class="body-p">
+          Lo que ves en la foto no es una nave industrial: es nuestro espacio
+          de trabajo diario. Cuando agendas una visita, te enseñamos lo que
+          estamos confeccionando esa misma semana.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIFRAS -->
+<section class="br-section br-figures">
+  <div class="wrap">
+    <header style="text-align:center;margin-bottom:4rem">
+      <span class="eyebrow">En cifras</span>
+      <div class="rule center"></div>
+      <h2 class="t-section">El pulso del estudio.</h2>
+    </header>
+    <div class="br-figures__grid">
+      <div class="br-figures__cell">
+        <span class="br-figures__num">+2K</span>
+        <p>Muestras de tejido<br>en showroom</p>
+      </div>
+      <div class="br-figures__cell">
+        <span class="br-figures__num">100%</span>
+        <p>Fabricación propia<br>en Jaca</p>
+      </div>
+      <div class="br-figures__cell">
+        <span class="br-figures__num">24h</span>
+        <p>Plazo de muestras<br>físicas a domicilio</p>
+      </div>
+      <div class="br-figures__cell">
+        <span class="br-figures__num">3</span>
+        <p>Audiencias servidas:<br>profesionales, viviendas, negocios</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS NARRATIVA -->
+<section class="br-section br-section--soft br-services">
+  <div class="wrap">
+    <header class="br-services__head">
+      <span class="eyebrow">Lo que hacemos</span>
+      <div class="rule center"></div>
+      <h2 class="t-section">Cuatro disciplinas,<br>un proyecto integral.</h2>
+      <p class="body-p">Las coordinamos entre sí. Una cortina nunca pelea con su papel pintado, y un sofá nunca rompe la paleta de la estancia.</p>
+    </header>
+
+    <div class="br-services__list">
+
+      <article class="br-svc-row">
+        <div class="br-svc-row__media">
+          <img src="../03-assets/photography/cortinas/cortina_lino.jpg" alt="Cortinas y estores a medida">
+        </div>
+        <div>
+          <span class="br-svc-row__num">01</span>
+          <h3 class="t-card">Cortinas y estores</h3>
+          <p class="body-p">Confección a medida con la mejor caída del mercado. Sistemas wave, ondas perfectas, panel japonés y enrollables técnicos.</p>
+          <ul class="br-svc-row__list">
+            <li><i class="fas fa-check"></i> Lino, gasa, terciopelo, blackout</li>
+            <li><i class="fas fa-check"></i> Sistemas motorizados con domotización</li>
+            <li><i class="fas fa-check"></i> Visillos coordinados y dobles cortinas</li>
+            <li><i class="fas fa-check"></i> Instalación incluida en el presupuesto</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="br-svc-row">
+        <div class="br-svc-row__media">
+          <img src="../03-assets/photography/tapiceria/tapizado_sofa.jpg" alt="Tapicería y retapizado">
+        </div>
+        <div>
+          <span class="br-svc-row__num">02</span>
+          <h3 class="t-card">Tapicería y sofás</h3>
+          <p class="body-p">Fabricación de sofás personalizados y retapizado de piezas existentes. Trabajamos también pared tapizada, butacas y cabeceros.</p>
+          <ul class="br-svc-row__list">
+            <li><i class="fas fa-check"></i> Tejidos contract para alto tránsito</li>
+            <li><i class="fas fa-check"></i> Restauración de estructuras antiguas</li>
+            <li><i class="fas fa-check"></i> Cabeceros, baúles, bancos cadiera</li>
+            <li><i class="fas fa-check"></i> Recogida y entrega a domicilio</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="br-svc-row">
+        <div class="br-svc-row__media">
+          <img src="../03-assets/photography/papel-pintado/papel_pintado1.jpg" alt="Papel pintado y vinílicos">
+        </div>
+        <div>
+          <span class="br-svc-row__num">03</span>
+          <h3 class="t-card">Papel pintado</h3>
+          <p class="body-p">Selección, suministro y colocación profesional. Catálogo amplio de marcas exclusivas y posibilidad de mural a medida.</p>
+          <ul class="br-svc-row__list">
+            <li><i class="fas fa-check"></i> Vinílicos lavables y resistentes</li>
+            <li><i class="fas fa-check"></i> Murales fotográficos personalizados</li>
+            <li><i class="fas fa-check"></i> Aplicación profesional sin burbujas</li>
+            <li><i class="fas fa-check"></i> Coordinación con tapicería y cortinas</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="br-svc-row">
+        <div class="br-svc-row__media">
+          <img src="../03-assets/photography/muebles/muebles_hero.jpg" alt="Muebles auxiliares a medida">
+        </div>
+        <div>
+          <span class="br-svc-row__num">04</span>
+          <h3 class="t-card">Muebles auxiliares</h3>
+          <p class="body-p">Mesas, baúles, complementos lacados o tapizados a medida, coordinados con el proyecto textil. También colchones y descanso.</p>
+          <ul class="br-svc-row__list">
+            <li><i class="fas fa-check"></i> Diseño paramétrico para espacios irregulares</li>
+            <li><i class="fas fa-check"></i> Acabados lacados y tapizados</li>
+            <li><i class="fas fa-check"></i> Colchonería de alta gama</li>
+            <li><i class="fas fa-check"></i> Asesoramiento personalizado en showroom</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="br-section">
+  <div class="wrap">
+    <header class="br-process__head">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <div class="rule center"></div>
+      <h2 class="t-section">Cuatro pasos.<br>Sin sorpresas.</h2>
+    </header>
+    <div class="br-process__steps">
+      <div class="br-process__step">
+        <span class="br-process__num">01</span>
+        <span class="br-process__icon"><i class="fas fa-comments"></i></span>
+        <h4>Escucha</h4>
+        <p>Analizamos tu espacio: luz, confort, estilo y mantenimiento. En el showroom o en tu domicilio.</p>
+      </div>
+      <div class="br-process__step">
+        <span class="br-process__num">02</span>
+        <span class="br-process__icon"><i class="fas fa-swatchbook"></i></span>
+        <h4>Propuesta</h4>
+        <p>Definimos el proyecto por estancias, elegimos tejidos y presentamos presupuesto detallado.</p>
+      </div>
+      <div class="br-process__step">
+        <span class="br-process__num">03</span>
+        <span class="br-process__icon"><i class="fas fa-cut"></i></span>
+        <h4>Taller</h4>
+        <p>Confeccionamos en nuestro propio taller. Plazos confirmados desde el primer día.</p>
+      </div>
+      <div class="br-process__step">
+        <span class="br-process__num">04</span>
+        <span class="br-process__icon"><i class="fas fa-tools"></i></span>
+        <h4>Instalación</h4>
+        <p>Instalamos en la fecha acordada, ajustamos sobre el terreno y te acompañamos en el futuro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section class="br-section br-section--soft br-projects">
+  <div class="wrap">
+    <header class="br-projects__head">
+      <span class="eyebrow">Proyectos</span>
+      <div class="rule center"></div>
+      <h2 class="t-section">Casos reales del Pirineo.</h2>
+    </header>
+    <div class="br-projects__grid">
+
+      <article class="br-project">
+        <img src="../03-assets/photography/proyecto_Biescas.jpeg" alt="Salón en Biescas">
+        <div class="br-project__caption">
+          <span class="br-project__sub">Proyecto particular</span>
+          <h3 class="br-project__title">Biescas</h3>
+        </div>
+      </article>
+
+      <article class="br-project">
+        <img src="../03-assets/photography/cortina_dormitorio.jpg" alt="Chalet en Valle de Tena">
+        <div class="br-project__caption">
+          <span class="br-project__sub">Proyecto integral</span>
+          <h3 class="br-project__title">Chalet · Valle de Tena</h3>
+        </div>
+      </article>
+
+      <article class="br-project">
+        <img src="../03-assets/photography/camping_valle_aragon.jpg" alt="Bungalow Camping Valle de Aragón">
+        <div class="br-project__caption">
+          <span class="br-project__sub">Proyecto de negocio</span>
+          <h3 class="br-project__title">Camping · Valle de Aragón</h3>
+        </div>
+      </article>
+
+      <article class="br-project">
+        <img src="../03-assets/photography/cortinas_aulas.jpeg" alt="Centro educativo en Jaca">
+        <div class="br-project__caption">
+          <span class="br-project__sub">Proyecto institucional</span>
+          <h3 class="br-project__title">Centro educativo · Jaca</h3>
+        </div>
+      </article>
+
+      <article class="br-project">
+        <img src="../03-assets/photography/Sofa_cama_sistema_italiano.jpg" alt="Sofá cama sistema italiano">
+        <div class="br-project__caption">
+          <span class="br-project__sub">Compra e instalación</span>
+          <h3 class="br-project__title">Sofá · Jaca</h3>
+        </div>
+      </article>
+
+      <article class="br-project">
+        <img src="../03-assets/photography/sillas_retapizadas.jpg" alt="Despacho en Jaca">
+        <div class="br-project__caption">
+          <span class="br-project__sub">Renovación de mobiliario</span>
+          <h3 class="br-project__title">Despacho · Jaca</h3>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIO -->
+<section class="br-section">
+  <div class="wrap">
+    <div class="br-quote">
+      <p class="br-quote__text">
+        Más que un servicio, una experiencia tan excepcional que transformó mi
+        hogar y me inspiró a compartir vuestro talento con todo el vecindario.
+      </p>
+      <p class="br-quote__cite">Cliente particular · Biescas</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="br-section br-section--ink">
+  <div class="wrap">
+    <div class="br-contact">
+      <div>
+        <span class="eyebrow">Hablemos</span>
+        <div class="rule"></div>
+        <h2 class="t-section">Pásate por el<br>showroom o llámanos.</h2>
+        <p class="body-p">
+          Estamos en Jaca, abiertos de lunes a sábado. También nos
+          desplazamos a cualquier punto del Pirineo aragonés para tomar
+          medidas y presentarte el proyecto en tu propio espacio.
+        </p>
+      </div>
+      <div class="br-contact__info">
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i><div><strong>Dirección</strong>C/ Domingo Miral, 1<br>22700 Jaca, Aragón</div></li>
+          <li><i class="fas fa-phone"></i><div><strong>Teléfono</strong>+34 974 288 787<br>+34 630 908 883</div></li>
+          <li><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong>+34 630 908 883</div></li>
+          <li><i class="fas fa-envelope"></i><div><strong>Email</strong>tienda@habitatdecor.es</div></li>
+          <li><i class="fas fa-clock"></i><div><strong>Horario</strong>Lun–Sáb: 10:30–13:30 / 17:00–20:00</div></li>
+          <li><i class="fas fa-globe"></i><div><strong>Web</strong>habitatdecor.es</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="br-footer">
+  <div class="wrap">
+    © 2026 Habitat &amp; Decor — Textil Deco Asociados, S.L. · Brochure corporativo
+  </div>
+</footer>
+
+</body>
+</html>

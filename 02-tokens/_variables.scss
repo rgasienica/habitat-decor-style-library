@@ -1,0 +1,137 @@
+// ════════════════════════════════════════════════════════════════
+// HABITAT & DECOR — Design Tokens (SCSS)
+// ════════════════════════════════════════════════════════════════
+// Para proyectos que prefieran SCSS sobre CSS variables.
+// Espejo de tokens.css. Mantener sincronizado.
+// ════════════════════════════════════════════════════════════════
+
+// ── Colores ──────────────────────────────────────────────────────
+$c-ink:        #3C3C3C;
+$c-ink-soft:   #6B6560;
+$c-gold:       #B28622;
+$c-gold-dim:   rgba(178, 134, 34, 0.14);
+$c-gold-dark:  #9A7318;
+$c-sand:       #D2BF81;
+$c-linen:      #DFD3C8;
+$c-bg:         #F2EFEC;
+$c-bg-soft:    #EDE8E2;
+$c-white:      #FFFFFF;
+$c-success:    #6B8E5A;
+$c-error:      #B85450;
+$c-whatsapp:   #25D366;
+
+// Mapa para iteraciones
+$colors: (
+  ink:        $c-ink,
+  ink-soft:   $c-ink-soft,
+  gold:       $c-gold,
+  gold-dim:   $c-gold-dim,
+  gold-dark:  $c-gold-dark,
+  sand:       $c-sand,
+  linen:      $c-linen,
+  bg:         $c-bg,
+  bg-soft:    $c-bg-soft,
+  white:      $c-white
+);
+
+// ── Tipografía ───────────────────────────────────────────────────
+$f-display: 'Dancing Script', cursive;
+$f-body:    'Quicksand', sans-serif;
+
+$fw-light:    300;
+$fw-regular:  400;
+$fw-medium:   500;
+$fw-semibold: 600;
+
+$fs: (
+  xs:         0.55rem,
+  2xs:        0.57rem,
+  3xs:        0.58rem,
+  sm:         0.63rem,
+  base:       0.7rem,
+  eyebrow-h:  0.68rem,
+  eyebrow:    0.72rem,
+  md:         0.82rem,
+  card:       0.88rem,
+  body:       0.92rem,
+  card-t:     1.5rem,
+  logo:       1.55rem,
+  aud:        1.6rem,
+  drawer:     1.65rem
+);
+
+// ── Espaciado ────────────────────────────────────────────────────
+$sp: (
+  1: 0.4rem,
+  2: 0.8rem,
+  3: 1.2rem,
+  4: 1.6rem,
+  5: 2.4rem,
+  6: 4rem,
+  7: 6rem,
+  8: 8rem
+);
+
+// ── Layout ───────────────────────────────────────────────────────
+$max:   1200px;
+$pad-x: 28px;
+$nav-h: 72px;
+
+// ── Forma y sombras ──────────────────────────────────────────────
+$r:        3px;
+$r-circle: 50%;
+
+$sh-sm: 0 2px 14px rgba(60, 60, 60, 0.08);
+$sh-md: 0 6px 30px rgba(60, 60, 60, 0.11);
+
+// ── Easing ───────────────────────────────────────────────────────
+$ease:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+$t-fast: 0.18s;
+$t-base: 0.25s;
+$t-slow: 0.4s;
+$t-hero: 0.8s;
+
+// ── Breakpoints ──────────────────────────────────────────────────
+$bp: (
+  mobile-sm: 375px,
+  mobile:    600px,
+  tablet:    768px,
+  desktop:   900px,
+  wide:      1200px
+);
+
+// Mixin de media query
+@mixin bp($breakpoint) {
+  $value: map-get($bp, $breakpoint);
+  @if $value == null {
+    @error "Breakpoint #{$breakpoint} no existe en el mapa $bp";
+  }
+  @media (max-width: $value) { @content; }
+}
+
+// Uso:
+// @include bp(tablet) { ... }
+
+// ── Helpers ──────────────────────────────────────────────────────
+@mixin display-text {
+  font-family: $f-display;
+  font-weight: $fw-regular;
+}
+
+@mixin body-text {
+  font-family: $f-body;
+  font-weight: $fw-regular;
+  line-height: 1.8;
+  color: $c-ink-soft;
+}
+
+@mixin eyebrow {
+  font-family: $f-body;
+  font-size: map-get($fs, eyebrow);
+  font-weight: $fw-semibold;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: $c-gold;
+}

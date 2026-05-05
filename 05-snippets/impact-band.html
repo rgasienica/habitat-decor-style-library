@@ -1,0 +1,60 @@
+<!-- ════════════════════════════════════════════════════════════════
+     SNIPPET — Impact Band
+     Habitat & Decor Style Library
+     Banda con foto panorámica del Pirineo + 4 cifras alternadas
+     ════════════════════════════════════════════════════════════════ -->
+
+<section class="hd-band" aria-label="Datos clave">
+  <div class="wrap hd-band__inner">
+    <div class="hd-band__row">
+
+      <div class="hd-band__cell">
+        <span class="hd-band__num">2000+</span>
+        <span class="hd-band__txt">Muestras en showroom</span>
+      </div>
+
+      <div class="hd-band__sep" aria-hidden="true"></div>
+
+      <div class="hd-band__cell hd-band__cell--text">
+        <span class="hd-band__num hd-band__num--small">Nos desplazamos</span>
+        <span class="hd-band__txt">A cualquier punto<br>del Pirineo aragonés</span>
+      </div>
+
+      <div class="hd-band__sep" aria-hidden="true"></div>
+
+      <div class="hd-band__cell">
+        <span class="hd-band__num">100%</span>
+        <span class="hd-band__txt">Fabricación propia en Jaca</span>
+      </div>
+
+      <div class="hd-band__sep" aria-hidden="true"></div>
+
+      <div class="hd-band__cell hd-band__cell--text">
+        <span class="hd-band__num hd-band__num--small">Marcas exclusivas</span>
+        <span class="hd-band__txt">Colecciones que no<br>encontrarás en otro sitio</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .hd-band{position:relative;padding:5rem 0;background:url('03-assets/photography/H_D_image8.webp') center/cover no-repeat;color:var(--c-white)}
+  .hd-band::before{content:'';position:absolute;inset:0;background:rgba(60,60,60,.18)}
+  .hd-band__inner{position:relative;z-index:1}
+  .hd-band__row{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center;gap:1.6rem}
+  .hd-band__cell{display:flex;flex-direction:column;gap:.4rem;text-align:center;padding:.4rem 1rem}
+  .hd-band__num{font-family:var(--f-display);font-size:2.8rem;font-weight:600;line-height:1;color:var(--c-white)}
+  .hd-band__num--small{font-size:1.8rem}
+  .hd-band__txt{font-family:var(--f-body);font-size:.78rem;letter-spacing:.05em;line-height:1.5;color:var(--c-white);opacity:.9}
+  .hd-band__sep{width:1px;height:60px;background:var(--c-gold);opacity:.7}
+  @media (max-width:900px){
+    .hd-band__row{grid-template-columns:1fr 1fr;gap:2.4rem 1.2rem}
+    .hd-band__sep{display:none}
+  }
+  @media (max-width:600px){
+    .hd-band__row{grid-template-columns:1fr;gap:2rem}
+    .hd-band__num{font-size:2.2rem}
+    .hd-band__num--small{font-size:1.5rem}
+  }
+</style>

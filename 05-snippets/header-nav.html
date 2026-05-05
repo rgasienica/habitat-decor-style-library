@@ -1,0 +1,143 @@
+<!-- ════════════════════════════════════════════════════════════════
+     SNIPPET — Header & Navigation
+     Habitat & Decor Style Library
+     Requiere: tokens.css + Google Fonts + Font Awesome 6
+     ════════════════════════════════════════════════════════════════ -->
+
+<header class="hd-header">
+  <div class="wrap hd-header__inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="hd-logo">
+      <span class="hd-logo__icon">
+        <img src="03-assets/photography/logo-habitat-decor2.png" alt="Habitat & Decor logo" width="38" height="38">
+      </span>
+      <span class="hd-logo__text">Habitat &amp; Decor</span>
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="hd-nav" aria-label="Principal">
+      <ul class="hd-nav__list">
+
+        <!-- Dropdown 1: Audiencia -->
+        <li class="hd-nav__item hd-drop">
+          <button class="hd-nav__link" aria-expanded="false" aria-controls="drop-audiencia">
+            <span class="hd-nav__sub">¿Nos necesitas?</span>
+            <span class="hd-nav__main">¿Quién eres?</span>
+            <svg class="hd-nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1 1 5 5 9 1"/></svg>
+          </button>
+          <div class="hd-drop__panel" id="drop-audiencia">
+            <span class="hd-drop__head">¿Quién eres?</span>
+            <a href="profesionales.html" class="hd-drop__item">
+              <span class="hd-drop__ic">
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 2L14 6v8H2V6z"/><path d="M6 14V9h4v5"/></svg>
+              </span>
+              <span>
+                <span class="hd-drop__title">Profesionales</span>
+                <span class="hd-drop__sub">Decoradores, interioristas y arquitectos</span>
+              </span>
+            </a>
+            <a href="viviendas.html" class="hd-drop__item">
+              <span class="hd-drop__ic">
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="6" width="12" height="8" rx="1"/><path d="M5 6V4Q8 1 11 4v2"/></svg>
+              </span>
+              <span>
+                <span class="hd-drop__title">Particulares</span>
+                <span class="hd-drop__sub">Viviendas y segundas residencias</span>
+              </span>
+            </a>
+            <a href="negocios.html" class="hd-drop__item">
+              <span class="hd-drop__ic">
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="5" width="14" height="9" rx="1"/><path d="M4 5V3Q8 1 12 3v2"/></svg>
+              </span>
+              <span>
+                <span class="hd-drop__title">Hoteles y negocios</span>
+                <span class="hd-drop__sub">Alojamientos y empresas turísticas</span>
+              </span>
+            </a>
+          </div>
+        </li>
+
+        <!-- Dropdown 2: Servicios -->
+        <li class="hd-nav__item hd-drop">
+          <button class="hd-nav__link" aria-expanded="false" aria-controls="drop-servicios">
+            <span class="hd-nav__sub">Nuestra especialidad</span>
+            <span class="hd-nav__main">Somos expertos en</span>
+            <svg class="hd-nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1 1 5 5 9 1"/></svg>
+          </button>
+          <div class="hd-drop__panel" id="drop-servicios">
+            <span class="hd-drop__head">Somos expertos en</span>
+            <a href="cortinas.html" class="hd-drop__item"><span class="hd-drop__ic"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 2Q8 7 14 2v12Q8 9 2 14Z"/></svg></span><span class="hd-drop__title">Cortinas y estores</span></a>
+            <a href="tapiceria.html" class="hd-drop__item"><span class="hd-drop__ic"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="5" width="12" height="7" rx="3"/><path d="M5 5Q5 2 8 2Q11 2 11 5"/></svg></span><span class="hd-drop__title">Tapicería y sofás</span></a>
+            <a href="papel-pintado.html" class="hd-drop__item"><span class="hd-drop__ic"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="2" width="12" height="12" rx="1"/><path d="M5 5h6M5 8h6M5 11h4"/></svg></span><span class="hd-drop__title">Papel pintado</span></a>
+            <a href="muebles-medida.html" class="hd-drop__item"><span class="hd-drop__ic"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="10" height="7" rx="1"/><path d="M1 6h14M6 6V4Q8 2 10 4v2"/></svg></span><span class="hd-drop__title">Muebles a medida</span></a>
+          </div>
+        </li>
+
+        <!-- Dropdown 3: Visítanos -->
+        <li class="hd-nav__item hd-drop">
+          <button class="hd-nav__link" aria-expanded="false" aria-controls="drop-visitanos">
+            <span class="hd-nav__sub">Visítanos</span>
+            <span class="hd-nav__main">Estamos en Jaca</span>
+            <svg class="hd-nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1 1 5 5 9 1"/></svg>
+          </button>
+          <div class="hd-drop__panel" id="drop-visitanos">
+            <span class="hd-drop__head">Estamos en Jaca</span>
+            <a href="showroom.html" class="hd-drop__item"><span class="hd-drop__ic"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="4" width="12" height="9" rx="1"/><path d="M5 4V2h6v2"/></svg></span><span><span class="hd-drop__title">Showroom</span><span class="hd-drop__sub">Ver, tocar y decidir · C/ Domingo Miral, 1</span></span></a>
+            <a href="taller.html" class="hd-drop__item"><span class="hd-drop__ic"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="6" r="3"/><path d="M3 14c0-3 10-3 10 0"/></svg></span><span><span class="hd-drop__title">Taller</span><span class="hd-drop__sub">Fabricación propia en Jaca</span></span></a>
+            <a href="horario-especial.html" class="hd-drop__item"><span class="hd-drop__ic"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="5"/><path d="M8 4v4l3 2"/></svg></span><span><span class="hd-drop__title">Horario y visita especial</span><span class="hd-drop__sub">¿Fin de semana o festivo? Te llamamos</span></span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- CTAs nav -->
+    <div class="hd-nav__cta">
+      <a href="contacto.html" class="btn-hablanos">Háblanos</a>
+      <a href="horario-especial.html" class="btn-agendar">Agendar cita</a>
+    </div>
+
+    <!-- Hamburger móvil -->
+    <button class="hd-burger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<style>
+  .hd-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(242,239,236,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--c-linen);height:var(--nav-h)}
+  .hd-header__inner{display:flex;align-items:center;justify-content:space-between;height:100%}
+  .hd-logo{display:flex;align-items:center;gap:.6rem}
+  .hd-logo__icon img{display:block}
+  .hd-logo__text{font-family:var(--f-display);font-size:var(--fs-logo);font-weight:600;color:var(--c-gold);letter-spacing:.02em}
+  .hd-nav__list{display:flex;gap:1.4rem;align-items:center}
+  .hd-nav__item{position:relative}
+  .hd-nav__link{display:flex;flex-direction:column;align-items:flex-start;gap:.1rem;padding:.5rem .2rem;color:var(--c-ink);font-family:var(--f-body);position:relative}
+  .hd-nav__link::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:1px;background:var(--c-gold);transition:width .3s var(--ease),left .3s var(--ease)}
+  .hd-nav__link:hover::after{width:100%;left:0}
+  .hd-nav__sub{font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink-soft)}
+  .hd-nav__main{font-size:.63rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--c-ink);display:flex;align-items:center;gap:.4rem}
+  .hd-nav__chevron{transition:transform .25s}
+  .hd-drop:hover .hd-nav__chevron,.hd-drop[data-open="true"] .hd-nav__chevron{transform:rotate(180deg)}
+  .hd-drop__panel{position:absolute;top:calc(100% + 8px);left:0;background:var(--c-white);border:1px solid var(--c-linen);border-radius:var(--r);box-shadow:var(--sh-md);padding:1rem;min-width:280px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .25s var(--ease);z-index:1100;display:flex;flex-direction:column;gap:.4rem}
+  .hd-drop:hover .hd-drop__panel,.hd-drop[data-open="true"] .hd-drop__panel{opacity:1;visibility:visible;transform:translateY(0)}
+  .hd-drop__head{font-size:.57rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--c-gold);padding:.4rem .6rem;border-bottom:1px solid var(--c-linen);margin-bottom:.4rem}
+  .hd-drop__item{display:flex;gap:.7rem;padding:.55rem .6rem;border-radius:var(--r);transition:background .18s}
+  .hd-drop__item:hover{background:var(--c-bg-soft)}
+  .hd-drop__ic{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1px solid var(--c-sand);display:flex;align-items:center;justify-content:center;color:var(--c-gold)}
+  .hd-drop__title{display:block;font-size:.82rem;font-weight:600;color:var(--c-ink);line-height:1.3}
+  .hd-drop__sub{display:block;font-size:.7rem;color:var(--c-ink-soft);line-height:1.3;margin-top:.15rem}
+  .hd-nav__cta{display:flex;gap:.5rem;align-items:center}
+  .btn-hablanos,.btn-agendar{font-size:.63rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;border-radius:var(--r);padding:.58rem 1.1rem;border:1px solid;transition:all .25s}
+  .btn-hablanos{color:var(--c-gold);border-color:var(--c-sand);background:transparent}
+  .btn-hablanos:hover{background:var(--c-gold);color:var(--c-white);border-color:var(--c-gold)}
+  .btn-agendar{color:var(--c-white);background:var(--c-gold);border-color:var(--c-gold)}
+  .btn-agendar:hover{background:var(--c-gold-dark);border-color:var(--c-gold-dark)}
+  .hd-burger{display:none;flex-direction:column;gap:5px;padding:.4rem}
+  .hd-burger span{display:block;width:22px;height:1.5px;background:var(--c-ink);transition:transform .3s}
+  @media (max-width:768px){
+    .hd-nav,.hd-nav__cta{display:none}
+    .hd-burger{display:flex}
+  }
+</style>

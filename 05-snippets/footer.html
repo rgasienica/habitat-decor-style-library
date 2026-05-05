@@ -1,0 +1,104 @@
+<!-- ════════════════════════════════════════════════════════════════
+     SNIPPET — Footer
+     Habitat & Decor Style Library
+     ════════════════════════════════════════════════════════════════ -->
+
+<footer class="hd-footer">
+  <div class="wrap">
+
+    <div class="hd-footer__grid">
+
+      <!-- Columna marca -->
+      <div class="hd-footer__brand">
+        <div class="hd-footer__logo">
+          <img src="03-assets/photography/logo-habitat-decor2.png" alt="" width="32" height="32">
+          <span>Habitat &amp; Decor</span>
+        </div>
+        <p class="hd-footer__about">
+          Taller y showroom de proyectos textiles integrales en Jaca.
+          Cortinas, tapicería, papel pintado y muebles a medida desde
+          el Pirineo aragonés.
+        </p>
+        <div class="hd-footer__social">
+          <a href="https://www.facebook.com/profile.php?id=61575292613905" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/habitatdecorjaca/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://es.pinterest.com/HabitatDecorJaca" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          <a href="https://wa.me/34630908883" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Navegación -->
+      <div class="hd-footer__col">
+        <h4 class="hd-footer__head">Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Clientes -->
+      <div class="hd-footer__col">
+        <h4 class="hd-footer__head">Clientes</h4>
+        <ul>
+          <li><a href="profesionales.html">Profesionales</a></li>
+          <li><a href="viviendas.html">Viviendas</a></li>
+          <li><a href="negocios.html">Hoteles y negocios</a></li>
+          <li><a href="showroom.html">Showroom</a></li>
+          <li><a href="taller.html">Taller</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="hd-footer__col">
+        <h4 class="hd-footer__head">Contacto</h4>
+        <ul class="hd-footer__contact">
+          <li><i class="fas fa-map-marker-alt"></i> C/ Domingo Miral, 1 · 22700 Jaca</li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+34974288787">+34 974 288 787</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:tienda@habitatdecor.es">tienda@habitatdecor.es</a></li>
+          <li><i class="fas fa-clock"></i> Lun–Sáb 10:30–13:30 / 17:00–20:00</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="hd-footer__bottom">
+      <p>© 2026 Habitat &amp; Decor — Textil Deco Asociados, S.L. Todos los derechos reservados.</p>
+      <ul class="hd-footer__legal">
+        <li><a href="politica-privacidad-habitatdecor.html">Privacidad</a></li>
+        <li><a href="politica-cookies.html">Cookies</a></li>
+        <li><a href="aviso-legal.html">Aviso legal</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .hd-footer{background:var(--c-bg-soft);padding:4rem 0 2rem;color:var(--c-ink)}
+  .hd-footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+  .hd-footer__logo{display:flex;align-items:center;gap:.5rem;font-family:var(--f-display);font-size:1.5rem;font-weight:600;color:var(--c-gold);margin-bottom:1rem}
+  .hd-footer__about{font-size:.85rem;line-height:1.7;color:var(--c-ink-soft);margin-bottom:1.5rem;max-width:340px}
+  .hd-footer__social{display:flex;gap:.5rem}
+  .hd-footer__social a{width:32px;height:32px;border-radius:50%;border:1px solid var(--c-sand);display:flex;align-items:center;justify-content:center;color:var(--c-gold);font-size:.75rem;transition:background .25s,border-color .25s}
+  .hd-footer__social a:hover{background:var(--c-gold);color:var(--c-white);border-color:var(--c-gold)}
+  .hd-footer__head{font-family:var(--f-body);font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--c-linen)}
+  .hd-footer__col ul li{margin-bottom:.6rem}
+  .hd-footer__col a{font-size:.85rem;color:var(--c-ink-soft);transition:color .2s}
+  .hd-footer__col a:hover{color:var(--c-gold)}
+  .hd-footer__contact li{display:flex;gap:.5rem;align-items:flex-start;font-size:.8rem;line-height:1.5;color:var(--c-ink-soft);margin-bottom:.7rem}
+  .hd-footer__contact i{color:var(--c-gold);margin-top:.2rem;width:14px;text-align:center;flex-shrink:0}
+  .hd-footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.6rem;border-top:1px solid var(--c-sand);font-size:.7rem;color:var(--c-ink-soft);flex-wrap:wrap;gap:1rem}
+  .hd-footer__legal{display:flex;gap:1.5rem}
+  .hd-footer__legal a{color:var(--c-ink-soft);font-size:.7rem;transition:color .2s}
+  .hd-footer__legal a:hover{color:var(--c-gold)}
+  @media (max-width:900px){
+    .hd-footer__grid{grid-template-columns:1fr 1fr;gap:2rem}
+  }
+  @media (max-width:600px){
+    .hd-footer__grid{grid-template-columns:1fr}
+    .hd-footer__bottom{flex-direction:column;text-align:center}
+  }
+</style>
